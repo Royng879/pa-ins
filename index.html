@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1407136294376527');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1407136294376527&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chubb意外保险 - 为您的安全及早规划</title>
-    <meta property="og:title" content="Chubb 意外保险 - 专为55-80岁长辈设计的意外保障">
-<meta property="og:description" content="人老后，最常见的意外不是「车祸」，而是「跌倒」！每天只需约RM2，给父母一份安心。">
+    <title>Chubb 银发族意外保险 - 给爸妈最好的爱</title>
+    <meta property="og:title" content="Chubb 银发族意外保险 - 给爸妈最好的爱，是不用担心医药费">
+<meta property="og:description" content="每天低至 RM0.60，为 55-80 岁长辈提供 24 小时意外保障。免体检，跌倒、烫伤、骨折皆可理赔！中医、铁打也能报销！">
 <meta property="og:image" content="https://www.onlinepa.store/parents.jpeg">
 <meta property="og:url" content="https://www.onlinepa.store">
 <meta property="og:type" content="website">
@@ -20,6 +37,52 @@
         .bg-gradient-orange { background: linear-gradient(135deg, #FF9D00 0%, #FF5E00 100%); }
         .pulse-btn { animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            /* 防止文字过大导致换行问题 */
+            h1, h2, h3, h4 { 
+                word-break: keep-all;
+                hyphens: none;
+            }
+            
+            /* 确保表情符号和图标在小屏幕上不会太大 */
+            .emoji-responsive {
+                font-size: clamp(2rem, 8vw, 4rem);
+            }
+            
+            /* 优化按钮间距 */
+            .flex.flex-col.sm\\:flex-row.gap-4 {
+                gap: 0.75rem;
+            }
+            
+            /* 优化卡片内边距 */
+            .hover\\:scale-105 {
+                transition: transform 0.2s ease;
+            }
+            
+            /* 禁用小屏幕上的hover缩放效果，避免布局问题 */
+            @media (hover: none) {
+                .hover\\:scale-105:hover {
+                    transform: none;
+                }
+            }
+        }
+
+        /* 超小屏幕优化 (320px - 375px) */
+        @media (max-width: 375px) {
+            /* 进一步缩小文字 */
+            html {
+                font-size: 14px;
+            }
+        }
+
+        /* 确保长文字不会溢出 */
+        p, li, span {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
     </style>
 </head>
 <body class="bg-slate-50 text-gray-800">
@@ -28,19 +91,20 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
             <div class="w-full md:w-1/2 p-8 md:p-16 text-center md:text-left">
                 <div class="bg-orange-100 text-orange-700 font-bold px-4 py-1 rounded-full inline-block mb-4">
-                    【健康提醒】
+                    【Chubb 意外保险】
                 </div>
                 <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-gray-900">
-                    人老后，最常见的意外不是<span class="text-red-600">「车祸」</span>，而是<span class="text-orange-500">「跌倒」</span>！
+                    给爸妈最好的爱，<br>是不用担心医药费。
                 </h1>
-                <p class="text-xl text-gray-600 mb-8 font-medium">
-                    (55岁以上至80岁均可投保)
+                <p class="text-xl text-gray-600 mb-8 font-medium leading-relaxed">
+                    每天低至 RM0.60，为 55-80 岁长辈提供 24 小时意外保障。<br>
+                    <span class="text-orange-600 font-bold">免体检，跌倒、烫伤、骨折皆可理赔！</span>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="#contact" class="bg-orange-600 text-white text-lg font-bold px-10 py-4 rounded-xl shadow-lg hover:bg-orange-700 transition transform hover:-translate-y-1">
                         立即获取详情
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=60124801139&text=我想咨询跌倒保障" class="bg-green-500 text-white text-lg font-bold px-10 py-4 rounded-xl shadow-lg hover:bg-green-600 transition flex items-center justify-center pulse-btn">
+                    <a href="https://api.whatsapp.com/send?phone=60124801139&text=我想了解银发族意外险，请问XX岁保费是多少？" onclick="trackWhatsAppClick('Header WhatsApp Button')" class="bg-green-500 text-white text-lg font-bold px-10 py-4 rounded-xl shadow-lg hover:bg-green-600 transition flex items-center justify-center pulse-btn">
                         <i class="fab fa-whatsapp mr-2 text-2xl"></i> WhatsApp 咨询
                     </a>
                 </div>
@@ -51,40 +115,40 @@
         </div>
     </header>
 
-    <section class="py-20 px-4 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-red-600">意外无处不在，安心保障不可少</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+    <section class="py-12 md:py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-10 md:mb-16">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-red-600 px-2">意外无处不在，安心保障不可少</h2>
+            <p class="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                 55岁以后，许多人以为最大的风险来自交通意外，但事实上，最常见、也最容易被忽略的是「跌倒」。
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 transition hover:shadow-2xl">
-                <img src="fall down.png" alt="滑倒" class="w-full h-64 object-cover">
-                <div class="p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-4 text-orange-600">1. 突如其来的滑倒</h3>
-                    <p class="text-gray-600 leading-relaxed text-lg text-left">
+        <div class="grid md:grid-cols-3 gap-6 md:gap-10">
+            <div class="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-gray-100 transition hover:shadow-2xl">
+                <img src="fall down.png" alt="滑倒" class="w-full h-48 md:h-64 object-cover">
+                <div class="p-5 md:p-8 text-center">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-orange-600">1. 突如其来的滑倒</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm md:text-base lg:text-lg text-left">
                         浴室湿滑、花园地面潮湿、雨天的地砖，一个不留神，就可能造成摔倒与受伤。
                     </p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 transition hover:shadow-2xl">
-                <img src="cut off.jpg" alt="割伤" class="w-full h-64 object-cover">
-                <div class="p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-4 text-orange-600">2. 防不胜防的割伤</h3>
-                    <p class="text-gray-600 leading-relaxed text-lg text-left">
+            <div class="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-gray-100 transition hover:shadow-2xl">
+                <img src="cut off.jpg" alt="割伤" class="w-full h-48 md:h-64 object-cover">
+                <div class="p-5 md:p-8 text-center">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-orange-600">2. 防不胜防的割伤</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm md:text-base lg:text-lg text-left">
                         厨房切菜、处理食材时，锋利的刀具随时可能带来意外割伤。
                     </p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 transition hover:shadow-2xl">
-                <img src="fire on hand.jpg" alt="烫伤" class="w-full h-64 object-cover">
-                <div class="p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-4 text-orange-600">3. 难以避免的烫伤</h3>
-                    <p class="text-gray-600 leading-relaxed text-lg text-left">
+            <div class="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-gray-100 transition hover:shadow-2xl">
+                <img src="fire on hand.jpg" alt="烫伤" class="w-full h-48 md:h-64 object-cover">
+                <div class="p-5 md:p-8 text-center">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-orange-600">3. 难以避免的烫伤</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm md:text-base lg:text-lg text-left">
                         热水、热锅、蒸汽，日常生活中的热源，往往是最容易忽略的风险。
                     </p>
                 </div>
@@ -92,43 +156,43 @@
         </div>
     </section>
 
-    <section class="py-20 bg-white px-4">
+    <section class="py-12 md:py-20 bg-white px-4">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 underline decoration-orange-500 underline-offset-8">
-                    别让保单睡大觉：这些时刻其实也「有得赔」
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-gray-900 underline decoration-orange-500 underline-offset-8 px-2">
+                    别让保单睡大觉：<br class="sm:hidden">这些时刻其实也「有得赔」
                 </h2>
-                <p class="text-lg text-gray-600">
-                    很多人常以为“意外”只发生在路上，但更多意外其实发生在生活中。
+                <p class="text-base md:text-lg text-gray-600 px-4">
+                    很多人常以为"意外"只发生在路上，但更多意外其实发生在生活中。
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="p-6 rounded-2xl bg-orange-50 border border-orange-100 text-center shadow-sm">
-                    <div class="text-orange-500 text-3xl mb-4"><i class="fas fa-utensils"></i></div>
-                    <h4 class="font-bold mb-2">厨房意外</h4>
-                    <p class="text-sm text-gray-500">切菜割伤需缝针</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="p-4 md:p-6 rounded-xl md:rounded-2xl bg-orange-50 border border-orange-100 text-center shadow-sm">
+                    <div class="text-orange-500 text-2xl md:text-3xl mb-2 md:mb-4"><i class="fas fa-utensils"></i></div>
+                    <h4 class="font-bold mb-1 md:mb-2 text-sm md:text-base">厨房意外</h4>
+                    <p class="text-xs md:text-sm text-gray-500">切菜割伤需缝针</p>
                 </div>
-                <div class="p-6 rounded-2xl bg-orange-50 border border-orange-100 text-center shadow-sm">
-                    <div class="text-orange-500 text-3xl mb-4"><i class="fas fa-paw"></i></div>
-                    <h4 class="font-bold mb-2">宠物互动</h4>
-                    <p class="text-sm text-gray-500">猫抓狗咬打破伤风</p>
+                <div class="p-4 md:p-6 rounded-xl md:rounded-2xl bg-orange-50 border border-orange-100 text-center shadow-sm">
+                    <div class="text-orange-500 text-2xl md:text-3xl mb-2 md:mb-4"><i class="fas fa-paw"></i></div>
+                    <h4 class="font-bold mb-1 md:mb-2 text-sm md:text-base">宠物互动</h4>
+                    <p class="text-xs md:text-sm text-gray-500">猫抓狗咬打破伤风</p>
                 </div>
-                <div class="p-6 rounded-2xl bg-orange-50 border border-orange-100 text-center shadow-sm">
-                    <div class="text-orange-500 text-3xl mb-4"><i class="fas fa-running"></i></div>
-                    <h4 class="font-bold mb-2">运动伤害</h4>
-                    <p class="text-sm text-gray-500">打羽球扭伤脚踝</p>
+                <div class="p-4 md:p-6 rounded-xl md:rounded-2xl bg-orange-50 border border-orange-100 text-center shadow-sm">
+                    <div class="text-orange-500 text-2xl md:text-3xl mb-2 md:mb-4"><i class="fas fa-running"></i></div>
+                    <h4 class="font-bold mb-1 md:mb-2 text-sm md:text-base">运动伤害</h4>
+                    <p class="text-xs md:text-sm text-gray-500">打羽球扭伤脚踝</p>
                 </div>
-                <div class="p-6 rounded-2xl bg-orange-50 border border-orange-100 text-center shadow-sm">
-                    <div class="text-orange-500 text-3xl mb-4"><i class="fas fa-fish"></i></div>
-                    <h4 class="font-bold mb-2">日常插曲</h4>
-                    <p class="text-sm text-gray-500">鱼刺卡喉、踩到钉子</p>
+                <div class="p-4 md:p-6 rounded-xl md:rounded-2xl bg-orange-50 border border-orange-100 text-center shadow-sm">
+                    <div class="text-orange-500 text-2xl md:text-3xl mb-2 md:mb-4"><i class="fas fa-fish"></i></div>
+                    <h4 class="font-bold mb-1 md:mb-2 text-sm md:text-base">日常插曲</h4>
+                    <p class="text-xs md:text-sm text-gray-500">鱼刺卡喉、踩到钉子</p>
                 </div>
             </div>
 
-            <div class="mt-12 bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">你知道吗？</h3>
-                <p class="text-gray-600 leading-relaxed text-center">
+            <div class="mt-8 md:mt-12 bg-gray-50 p-5 md:p-8 rounded-2xl md:rounded-3xl border border-gray-200">
+                <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4 text-center">你知道吗？</h3>
+                <p class="text-sm md:text-base text-gray-600 leading-relaxed text-center px-2">
                     意外险保障的不是「严重程度」，而是「突发状况」。<br class="hidden md:block">
                     只要产生了医疗费用，这些生活中的「小意外」都能派上大用场！
                 </p>
@@ -136,55 +200,254 @@
         </div>
     </section>
 
-    <section class="bg-slate-100 py-20 px-4">
-        <div class="max-w-6xl mx-auto bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
-            <div class="w-full md:w-1/2">
-                <img src="claimsuccess.jpeg" alt="理赔成功案例" class="w-full h-full object-cover">
+    <!-- 医药卡补丁区 -->
+    <section class="py-12 md:py-20 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-8 md:mb-12">
+                <span class="bg-red-500 text-white font-bold px-4 md:px-6 py-2 rounded-full inline-block mb-3 md:mb-4 text-sm md:text-base">
+                    ⚠️ 重要提醒
+                </span>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-gray-900 px-2">
+                    已有医药卡？<br class="md:hidden">这份保险是最佳"补丁"！
+                </h2>
+                <p class="text-base md:text-lg lg:text-xl text-gray-600 px-2">
+                    医药卡不是万能，这些情况需要自己付钱
+                </p>
             </div>
-            <div class="w-full md:w-1/2 p-10 md:p-16">
-                <h2 class="text-3xl font-bold mb-8 leading-tight text-gray-900">
+
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
+                <!-- 医药卡的限制 -->
+                <div class="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-xl border-l-4 md:border-l-8 border-red-500 hover:scale-105 transition">
+                    <div class="text-3xl md:text-5xl mb-3 md:mb-4">❌</div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-red-600">医药卡的限制</h3>
+                    <ul class="space-y-3 md:space-y-4 text-sm md:text-base lg:text-lg text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 md:mr-3 text-lg md:text-2xl flex-shrink-0">•</span>
+                            <span>需要扣除自付额 (Deductible)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 md:mr-3 text-lg md:text-2xl flex-shrink-0">•</span>
+                            <span>只保住院，诊所门诊不赔</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 md:mr-3 text-lg md:text-2xl flex-shrink-0">•</span>
+                            <span>中医、铁打通常不包括</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2 md:mr-3 text-lg md:text-2xl flex-shrink-0">•</span>
+                            <span>小伤口去看医生也要扣额度</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Chubb 意外险的优势 -->
+                <div class="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-xl border-l-4 md:border-l-8 border-green-500 hover:scale-105 transition">
+                    <div class="text-3xl md:text-5xl mb-3 md:mb-4">✅</div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-green-600">Chubb 意外险的优势</h3>
+                    <ul class="space-y-3 md:space-y-4 text-sm md:text-base lg:text-lg text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 md:mr-3 text-lg md:text-2xl flex-shrink-0">•</span>
+                            <strong class="text-green-700">看诊所洗伤口不用扣医药卡！</strong>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 md:mr-3 text-lg md:text-2xl flex-shrink-0">•</span>
+                            <span>直接报销诊所费用 (高达 RM5,000)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 md:mr-3 text-lg md:text-2xl flex-shrink-0">•</span>
+                            <span>每天 RM200 住院现金津贴</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2 md:mr-3 text-lg md:text-2xl flex-shrink-0">•</span>
+                            <span>意外骨折额外赔偿 RM5,000</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 真实案例 -->
+            <div class="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl md:rounded-3xl p-5 md:p-8 lg:p-12 shadow-2xl border-l-4 md:border-l-8 border-orange-500">
+                <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-gray-900">💡 真实案例：</h3>
+                <p class="text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed text-gray-800">
+                    陈太太在厨房滑倒手骨折，去诊所包扎花了 RM800，住院3天。医药卡有 RM1,000 自付额，不够扣。有了 Chubb 意外险，她拿回 RM800 诊所费用 + RM600 住院津贴 (RM200×3天) + RM5,000 骨折赔偿 = <strong class="text-lg md:text-xl lg:text-2xl text-orange-600">总共获赔 RM6,400！</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 大马本土卖点：中医/铁打 -->
+    <section class="py-12 md:py-20 px-4 bg-gradient-to-br from-green-400 via-teal-400 to-blue-400">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-white rounded-2xl md:rounded-[3rem] p-5 md:p-12 lg:p-16 shadow-2xl">
+                <div class="text-center mb-8 md:mb-12">
+                    <span class="bg-red-600 text-white font-bold px-4 md:px-8 py-2 md:py-3 rounded-full inline-block mb-4 md:mb-6 text-sm md:text-base lg:text-xl">
+                        🇲🇾 马来西亚独家优势
+                    </span>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-4 md:mb-6 text-gray-900 leading-tight px-2">
+                        跌倒扭伤？<br class="md:hidden">看铁打、中医也能报销！
+                    </h2>
+                    <p class="text-base md:text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto px-2">
+                        在大马，长辈跌倒扭伤第一反应是看铁打或中医。<br class="hidden sm:block">
+                        <strong class="text-green-600">Chubb PA 保险覆盖中医和铁打治疗费用</strong>，这是很多保险公司都不提供的保障！
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-5 md:gap-8 mb-8 md:mb-12">
+                    <div class="text-center p-5 md:p-8 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl md:rounded-3xl shadow-lg hover:scale-105 transition">
+                        <div class="text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4">🏥</div>
+                        <h4 class="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3 text-gray-900">中医治疗</h4>
+                        <p class="text-sm md:text-base lg:text-lg text-gray-600">针灸、推拿、中药</p>
+                    </div>
+                    <div class="text-center p-5 md:p-8 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl md:rounded-3xl shadow-lg hover:scale-105 transition">
+                        <div class="text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4">💪</div>
+                        <h4 class="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3 text-gray-900">铁打疗法</h4>
+                        <p class="text-sm md:text-base lg:text-lg text-gray-600">跌打损伤、扭伤</p>
+                    </div>
+                    <div class="text-center p-5 md:p-8 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl md:rounded-3xl shadow-lg hover:scale-105 transition">
+                        <div class="text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4">🩹</div>
+                        <h4 class="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3 text-gray-900">物理治疗</h4>
+                        <p class="text-sm md:text-base lg:text-lg text-gray-600">复健、按摩</p>
+                    </div>
+                </div>
+
+                <div class="text-center bg-gradient-to-r from-orange-100 to-red-100 rounded-2xl md:rounded-3xl p-5 md:p-8 border-2 md:border-4 border-orange-500">
+                    <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 leading-snug">
+                        每年最高可报销 <span class="block sm:inline text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-red-600 my-2 sm:my-0">RM3,000</span> <span class="block sm:inline">中医/铁打费用</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 理赔三部曲 -->
+    <section class="py-12 md:py-20 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-8 md:mb-12">
+                <span class="bg-blue-500 text-white font-bold px-4 md:px-6 py-2 rounded-full inline-block mb-3 md:mb-4 text-sm md:text-base">
+                    ⚡ 简单快速
+                </span>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 text-gray-900 px-2 leading-tight">
+                    理赔三部曲 - <br class="sm:hidden">买保险容易，赔钱更容易！
+                </h2>
+                <p class="text-base md:text-lg lg:text-xl text-gray-600 px-2">
+                    消除您"理赔难"的担忧
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16">
+                <!-- 步骤 1 -->
+                <div class="relative bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl border-t-4 md:border-t-8 border-orange-500">
+                    <div class="absolute -top-4 md:-top-6 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold shadow-lg">
+                        1
+                    </div>
+                    <div class="text-4xl md:text-5xl lg:text-6xl text-center mb-3 md:mb-4 mt-3 md:mt-4">📸</div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center text-gray-900">拍照上传单据</h3>
+                    <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-3 md:mb-4 text-center">
+                        手机拍照医疗单据、收据，通过 WhatsApp 发送给我们
+                    </p>
+                    <div class="bg-orange-50 rounded-xl p-3 md:p-4 text-xs md:text-sm text-gray-600 text-center">
+                        所需文件：医疗单据、身份证复印件
+                    </div>
+                </div>
+
+                <!-- 步骤 2 -->
+                <div class="relative bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl border-t-4 md:border-t-8 border-orange-500">
+                    <div class="absolute -top-4 md:-top-6 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold shadow-lg">
+                        2
+                    </div>
+                    <div class="text-4xl md:text-5xl lg:text-6xl text-center mb-3 md:mb-4 mt-3 md:mt-4">💬</div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center text-gray-900">代理协助处理</h3>
+                    <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-3 md:mb-4 text-center">
+                        专属代理帮您整理文件，跟进理赔进度，全程中文服务
+                    </p>
+                    <div class="bg-orange-50 rounded-xl p-3 md:p-4 text-xs md:text-sm text-gray-600 text-center">
+                        无需自己打电话给保险公司
+                    </div>
+                </div>
+
+                <!-- 步骤 3 -->
+                <div class="relative bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl border-t-4 md:border-t-8 border-orange-500">
+                    <div class="absolute -top-4 md:-top-6 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold shadow-lg">
+                        3
+                    </div>
+                    <div class="text-4xl md:text-5xl lg:text-6xl text-center mb-3 md:mb-4 mt-3 md:mt-4">✅</div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center text-gray-900">7-14 天现金进账</h3>
+                    <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-3 md:mb-4 text-center">
+                        理赔款项直接打入您的银行账户，快速到账
+                    </p>
+                    <div class="bg-orange-50 rounded-xl p-3 md:p-4 text-xs md:text-sm text-gray-600 text-center">
+                        平均理赔时间：10 个工作天
+                    </div>
+                </div>
+            </div>
+
+            <!-- 理赔统计 -->
+            <div class="grid md:grid-cols-3 gap-5 md:gap-8">
+                <div class="bg-gradient-to-br from-orange-500 to-red-500 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-xl hover:scale-105 transition">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-black mb-2">98%</div>
+                    <div class="text-base md:text-lg lg:text-xl font-semibold">理赔成功率</div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-xl hover:scale-105 transition">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-black mb-2">10 天</div>
+                    <div class="text-base md:text-lg lg:text-xl font-semibold">平均理赔时间</div>
+                </div>
+                <div class="bg-gradient-to-br from-green-500 to-teal-500 text-white rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-xl hover:scale-105 transition">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-black mb-2">RM850</div>
+                    <div class="text-base md:text-lg lg:text-xl font-semibold">平均理赔金额</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-100 py-12 md:py-20 px-4">
+        <div class="max-w-6xl mx-auto bg-white rounded-xl md:rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
+            <div class="w-full md:w-1/2">
+                <img src="claimsuccess.jpeg" alt="理赔成功案例" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 p-6 md:p-10 lg:p-16">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-gray-900">
                     林伯伯（68岁）不幸滑倒，<br>
                     <span class="text-orange-600 underline">7天内</span> 获得医药费理赔
                 </h2>
-                <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+                <div class="space-y-4 md:space-y-6 text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed">
                     <p>林伯伯清晨打理花园时脚下一滑跌倒。幸好只是轻微骨裂，但他没想过，短短7天内就获得了 RM3,000 的理赔金。</p>
-                    <blockquote class="bg-orange-50 p-6 border-l-8 border-orange-400 italic rounded-r-xl shadow-inner text-gray-800 font-medium">
+                    <blockquote class="bg-orange-50 p-4 md:p-6 border-l-4 md:border-l-8 border-orange-400 italic rounded-r-xl shadow-inner text-gray-800 font-medium text-sm md:text-base">
                         "原来这种在家跌倒也能理赔，真的帮了我很大的忙。医药费不用愁，也能安心养好伤。"
                     </blockquote>
-                    <div class="font-bold text-gray-900 border-t pt-6 mt-6">
-                        <p class="text-xl">“买保险不是为了赚什么，”</p>
-                        <p class="text-xl text-orange-600">"是为了万一有事，不要让家人担心。"</p>
+                    <div class="font-bold text-gray-900 border-t pt-4 md:pt-6 mt-4 md:mt-6">
+                        <p class="text-base md:text-lg lg:text-xl mb-2">"买保险不是为了赚什么，"</p>
+                        <p class="text-base md:text-lg lg:text-xl text-orange-600">"是为了万一有事，不要让家人担心。"</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-4 bg-gradient-orange text-white">
+    <section id="contact" class="py-12 md:py-20 lg:py-24 px-4 bg-gradient-orange text-white">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">想知道你是否已经拥有保障？</h2>
-            <p class="text-xl md:text-2xl mb-12 opacity-90 font-medium">每天大约RM2，保障自己也是给家人一份安心。</p>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 px-2">想知道你是否已经拥有保障？</h2>
+            <p class="text-base md:text-lg lg:text-xl xl:text-2xl mb-8 md:mb-12 opacity-90 font-medium px-2">每天大约RM2，保障自己也是给家人一份安心。</p>
 
-            <form id="leadForm" class="bg-white rounded-[2rem] p-8 md:p-14 shadow-2xl text-left text-gray-800">
-                <div class="space-y-6 mb-8">
+            <form id="leadForm" class="bg-white rounded-xl md:rounded-[2rem] p-5 md:p-10 lg:p-14 shadow-2xl text-left text-gray-800">
+                <div class="space-y-5 md:space-y-6 mb-6 md:mb-8">
                     <div>
-                        <label class="block font-bold mb-2 text-lg text-gray-700">您的姓名 (Full Name)</label>
-                        <input type="text" id="userName" required placeholder="请输入您的称呼" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-orange-200 focus:border-orange-500 outline-none transition text-lg text-black">
+                        <label class="block font-bold mb-2 text-base md:text-lg text-gray-700">您的姓名 (Full Name)</label>
+                        <input type="text" id="userName" required placeholder="请输入您的称呼" class="w-full p-3 md:p-4 bg-gray-50 border border-gray-200 rounded-xl md:rounded-2xl focus:ring-4 focus:ring-orange-200 focus:border-orange-500 outline-none transition text-base md:text-lg text-black">
                     </div>
                     <div>
-                        <label class="block font-bold mb-2 text-lg text-gray-700">WhatsApp 号码 (Mobile)</label>
-                        <input type="tel" id="userPhone" required placeholder="例如：012-3456789" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-orange-200 focus:border-orange-500 outline-none transition text-lg text-black">
+                        <label class="block font-bold mb-2 text-base md:text-lg text-gray-700">WhatsApp 号码 (Mobile)</label>
+                        <input type="tel" id="userPhone" required placeholder="例如：012-3456789" class="w-full p-3 md:p-4 bg-gray-50 border border-gray-200 rounded-xl md:rounded-2xl focus:ring-4 focus:ring-orange-200 focus:border-orange-500 outline-none transition text-base md:text-lg text-black">
                     </div>
                 </div>
                 
-                <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-black py-6 rounded-2xl text-2xl shadow-xl transition-all transform hover:scale-[1.02] active:scale-95 mb-8">
+                <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-black py-4 md:py-5 lg:py-6 rounded-xl md:rounded-2xl text-lg md:text-xl lg:text-2xl shadow-xl transition-all transform hover:scale-[1.02] active:scale-95 mb-6 md:mb-8">
                     立即免费咨询详情
                 </button>
                 
-                <div class="text-center border-t border-gray-100 pt-10">
-                    <p class="text-gray-500 mb-6 font-medium text-lg text-center">--- 或者 ---</p>
-                    <a href="https://api.whatsapp.com/send?phone=60124801139&text=我想咨询银发守护保险详情" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-2xl font-bold text-2xl transition shadow-lg transform hover:-translate-y-1 w-full justify-center">
-                        <i class="fab fa-whatsapp text-4xl mr-3"></i> 直接咨询 Mr Ng
+                <div class="text-center border-t border-gray-100 pt-6 md:pt-10">
+                    <p class="text-gray-500 mb-4 md:mb-6 font-medium text-sm md:text-base lg:text-lg text-center">--- 或者 ---</p>
+                    <a href="https://api.whatsapp.com/send?phone=60124801139&text=我想了解银发族意外险，请问XX岁保费是多少？" onclick="trackWhatsAppClick('Form WhatsApp Button')" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-lg md:text-xl lg:text-2xl transition shadow-lg transform hover:-translate-y-1 w-full justify-center">
+                        <i class="fab fa-whatsapp text-3xl md:text-4xl mr-2 md:mr-3"></i> 直接咨询 Mr Ng
                     </a>
                 </div>
             </form>
@@ -216,17 +479,34 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
     <script>
+        // 表单提交追踪 - 这是最重要的转化事件！
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // 🔥 关键：告诉 Facebook 有人留资料了！
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: '银发族意外险咨询表单',
+                    content_category: 'Insurance Lead'
+                });
+            }
+            
             const name = document.getElementById('userName').value;
             const phone = document.getElementById('userPhone').value;
             const myNumber = "60124801139"; 
-            const message = `你好 Mr Ng，我想咨询【银发守护保险】。%0A%0A我的资料如下：%0A姓名：${encodeURIComponent(name)}%0A电话：${encodeURIComponent(phone)}%0A%0A请联系我，谢谢！`;
+            const message = `你好 Mr Ng，我想了解银发族意外险，请问XX岁保费是多少？%0A%0A我的资料如下：%0A姓名：${encodeURIComponent(name)}%0A电话：${encodeURIComponent(phone)}%0A%0A请联系我，谢谢！`;
             window.open(`https://api.whatsapp.com/send?phone=${myNumber}&text=${message}`, '_blank');
         });
+
+        // WhatsApp 按钮点击追踪
+        function trackWhatsAppClick(buttonName) {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Contact', {
+                    content_name: buttonName,
+                    content_category: 'WhatsApp Click'
+                });
+            }
+        }
     </script>
 </body>
 </html>
-
-
-
